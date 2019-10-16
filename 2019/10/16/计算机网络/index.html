@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>计算机网络 | 鸽子乐园 | 咕咕咕咕咕！~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#D0E9FF">
+    
+    
+    <meta name="keywords" content="学习笔记,计算机网络">
+    <meta name="description" content="《计算机网络（自顶向下方法）》（第七版）读书笔记">
+<meta name="keywords" content="学习笔记,计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="https://rocky-17.github.io/2019/10/16/计算机网络/index.html">
+<meta property="og:site_name" content="鸽子乐园">
+<meta property="og:description" content="《计算机网络（自顶向下方法）》（第七版）读书笔记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/Rocky-17/Blog_illustration/blob/master/%E8%AE%A1%E7%BD%91/%E7%AC%AC%E4%B8%80%E7%AB%A0/DSL.png?raw=true">
+<meta property="og:image" content="https://github.com/Rocky-17/Blog_illustration/blob/master/%E8%AE%A1%E7%BD%91/%E7%AC%AC%E4%B8%80%E7%AB%A0/cable.png?raw=true">
+<meta property="og:image" content="https://github.com/Rocky-17/Blog_illustration/blob/master/%E8%AE%A1%E7%BD%91/%E7%AC%AC%E4%B8%80%E7%AB%A0/Ethernet.png?raw=true">
+<meta property="og:updated_time" content="2019-07-25T02:13:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络">
+<meta name="twitter:description" content="《计算机网络（自顶向下方法）》（第七版）读书笔记">
+<meta name="twitter:image" content="https://github.com/Rocky-17/Blog_illustration/blob/master/%E8%AE%A1%E7%BD%91/%E7%AC%AC%E4%B8%80%E7%AB%A0/DSL.png?raw=true">
+    
+        <link rel="alternate" type="application/atom+xml" title="鸽子乐园" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="https://github.com/Rocky-17/Blog_illustration/blob/master/%E5%A4%B4%E5%83%8F/suzy.jpg?raw=true">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Rocky17</h5>
+          <a href="mailto:Rocky17@foxmail.com" title="Rocky17@foxmail.com" class="mail">Rocky17@foxmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Rocky-17" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">计算机网络</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">计算机网络</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-16T09:35:01.606Z" itemprop="datePublished" class="page-time">
+  2019-10-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-计算机网络和因特网"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 计算机网络和因特网</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是因特网"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是因特网</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从因特网的具体构成来描述"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">从因特网的具体构成来描述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#因特网是连接“网络”的“网络”。"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">因特网是连接“网络”的“网络”。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#因特网通过诸如TCP-IP、HTTP等协议控制信息的收发"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">因特网通过诸如TCP/IP、HTTP等协议控制信息的收发</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#因特网标准"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">因特网标准</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#服务描述"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">服务描述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分布式应用程序"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">分布式应用程序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为应用程序提供服务的基础设施"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">为应用程序提供服务的基础设施</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为应用程序提供编程接口（套接字接口）"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">为应用程序提供编程接口（套接字接口）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#互联网结构"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">互联网结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网络边缘（network-edge）"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">网络边缘（network edge）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#客户——服务器模式-C-S模式"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">客户——服务器模式(C/S模式)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对等连接方式-peer-to-peer-p2p"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">对等连接方式(peer-to-peer,p2p)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接入网与物理媒介"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">接入网与物理媒介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#家庭接入"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">家庭接入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#DSL（数字专用线）"><span class="post-toc-number">1.2.2.1.1.</span> <span class="post-toc-text">DSL（数字专用线）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#电缆"><span class="post-toc-number">1.2.2.1.2.</span> <span class="post-toc-text">电缆</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FTTH（光纤到户）"><span class="post-toc-number">1.2.2.1.3.</span> <span class="post-toc-text">FTTH（光纤到户）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#拨号"><span class="post-toc-number">1.2.2.1.4.</span> <span class="post-toc-text">拨号</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#卫星"><span class="post-toc-number">1.2.2.1.5.</span> <span class="post-toc-text">卫星</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#企业接入"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">企业接入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#以太网"><span class="post-toc-number">1.2.2.2.1.</span> <span class="post-toc-text">以太网</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#卫星-1"><span class="post-toc-number">1.2.2.2.2.</span> <span class="post-toc-text">卫星</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#广域网无线接入"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">广域网无线接入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3G-4G"><span class="post-toc-number">1.2.2.3.1.</span> <span class="post-toc-text">3G/4G</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#LTE"><span class="post-toc-number">1.2.2.3.2.</span> <span class="post-toc-text">LTE</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#物理媒介"><span class="post-toc-number">1.2.2.4.</span> <span class="post-toc-text">物理媒介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#主机发送数据包流程"><span class="post-toc-number">1.2.2.4.1.</span> <span class="post-toc-text">主机发送数据包流程</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-计算机网络"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">计算机网络</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-16 17:35:01" datetime="2019-10-16T09:35:01.606Z"  itemprop="datePublished">2019-10-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>《计算机网络（自顶向下方法）》（第七版）读书笔记</p>
+<a id="more"></a>
+<h1 id="第一章-计算机网络和因特网"><a href="#第一章-计算机网络和因特网" class="headerlink" title="第一章 计算机网络和因特网"></a>第一章 计算机网络和因特网</h1><h2 id="什么是因特网"><a href="#什么是因特网" class="headerlink" title="什么是因特网"></a>什么是因特网</h2><h3 id="从因特网的具体构成来描述"><a href="#从因特网的具体构成来描述" class="headerlink" title="从因特网的具体构成来描述"></a>从因特网的具体构成来描述</h3><h4 id="因特网是连接“网络”的“网络”。"><a href="#因特网是连接“网络”的“网络”。" class="headerlink" title="因特网是连接“网络”的“网络”。"></a>因特网是连接“网络”的“网络”。</h4><p>&emsp;&emsp;<strong>因特网的本质就是连接，其价值也在于连接</strong>。ISP(因特网提供商 Internet Service Provider)的互联，让人们可以在网络上共享信息或软硬件资源，极大地方便和丰富了人们的生活。  </p>
+<h4 id="因特网通过诸如TCP-IP、HTTP等协议控制信息的收发"><a href="#因特网通过诸如TCP-IP、HTTP等协议控制信息的收发" class="headerlink" title="因特网通过诸如TCP/IP、HTTP等协议控制信息的收发"></a>因特网通过诸如TCP/IP、HTTP等协议控制信息的收发</h4><p>&emsp;&emsp;<strong>什么是协议？</strong></p>
+<blockquote>
+<p>&emsp;&emsp;协议定义了在两个或多个通信实体之间的交换的报文的格式和顺序，以及报文发送或者接收一条报文或其他事件所采取的动作.  </p>
+</blockquote>
+<p>&emsp;&emsp;协议有三个要素：<br>&emsp;&emsp;语法：用户数据与控制信息的结构与格式，以及数据出现顺序的意义<br>&emsp;&emsp;语义：用于解释比特流的每一部分的意义<br>&emsp;&emsp;时序：事件实现顺序的详细说明</p>
+<h4 id="因特网标准"><a href="#因特网标准" class="headerlink" title="因特网标准"></a>因特网标准</h4><p>&emsp;&emsp;由于协议的重要性（毕竟因特网是通过各种协议来控制信息的收发的），因此让每个人对各个协议的作用有一个共同的认知是必要的，这就需要一个标准。IETF(因特网工程任务组 Internet Engineering Task Force)研发了因特网标准(Internet standard)，所有的因特网标准都是以RFC（请求评论 Request For Comment）的形式在因特网上发布，任何人都可以对其提出意见或者建议。</p>
+<h3 id="服务描述"><a href="#服务描述" class="headerlink" title="服务描述"></a>服务描述</h3><h4 id="分布式应用程序"><a href="#分布式应用程序" class="headerlink" title="分布式应用程序"></a>分布式应用程序</h4><p>&emsp;&emsp;运行在不同端系统上，通过彼此通信实现因特网上各种应用。</p>
+<h4 id="为应用程序提供服务的基础设施"><a href="#为应用程序提供服务的基础设施" class="headerlink" title="为应用程序提供服务的基础设施"></a>为应用程序提供服务的基础设施</h4><p>&emsp;&emsp;1.面向连接的可靠服务。<br>&emsp;&emsp;2.无连接的不可靠服务。</p>
+<h4 id="为应用程序提供编程接口（套接字接口）"><a href="#为应用程序提供编程接口（套接字接口）" class="headerlink" title="为应用程序提供编程接口（套接字接口）"></a>为应用程序提供编程接口（套接字接口）</h4><p>&emsp;&emsp;它规定了运行在一个端系统上的程序请求因特网基础设施向运行在另一个端系统上的特定目的地程序交付数据的方式。（详细在第二章展开）</p>
+<h2 id="互联网结构"><a href="#互联网结构" class="headerlink" title="互联网结构"></a>互联网结构</h2><h3 id="网络边缘（network-edge）"><a href="#网络边缘（network-edge）" class="headerlink" title="网络边缘（network edge）"></a>网络边缘（network edge）</h3><p>&emsp;&emsp;处在网络边缘的就是连接在因特网上的所有主机(host)，主机又被称为端系统(end system)。在互联网边缘，主机之间的通信方式主要分为两类：</p>
+<h4 id="客户——服务器模式-C-S模式"><a href="#客户——服务器模式-C-S模式" class="headerlink" title="客户——服务器模式(C/S模式)"></a>客户——服务器模式(C/S模式)</h4><p>&emsp;&emsp;在C/S模式中，我们将主机分为两类：客户(clients)与服务器(servers)。很简单的，客户就是服务的请求方，而服务器则是服务的提供方。  </p>
+<h4 id="对等连接方式-peer-to-peer-p2p"><a href="#对等连接方式-peer-to-peer-p2p" class="headerlink" title="对等连接方式(peer-to-peer,p2p)"></a>对等连接方式(peer-to-peer,p2p)</h4><p>&emsp;&emsp; p2p方式不再区分客户与服务器，只要主机上安装了相应的p2p软件，就能在主机间相互提供服务。</p>
+<h3 id="接入网与物理媒介"><a href="#接入网与物理媒介" class="headerlink" title="接入网与物理媒介"></a>接入网与物理媒介</h3><p>&emsp;&emsp;将主机接入边缘路由器的方式：</p>
+<h4 id="家庭接入"><a href="#家庭接入" class="headerlink" title="家庭接入"></a>家庭接入</h4><h5 id="DSL（数字专用线）"><a href="#DSL（数字专用线）" class="headerlink" title="DSL（数字专用线）"></a>DSL（数字专用线）</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/Rocky-17/Blog_illustration/blob/master/%E8%AE%A1%E7%BD%91/%E7%AC%AC%E4%B8%80%E7%AB%A0/DSL.png?raw=true" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&emsp;&emsp;用户的DSL调制解调器通过使用现有的电话线（双绞铜线）与提供本地电话接入的电话公司的本地中心局的DSLAM（数字用户线接入复用器）交换数据来接入网络<br>&emsp;&emsp;上行速率不超过2.5Mbps，一般不超过1Mbps<br>&emsp;&emsp;下行速率不超过24Mbps，一般不超过10Mbps</p>
+<h5 id="电缆"><a href="#电缆" class="headerlink" title="电缆"></a>电缆</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/Rocky-17/Blog_illustration/blob/master/%E8%AE%A1%E7%BD%91/%E7%AC%AC%E4%B8%80%E7%AB%A0/cable.png?raw=true" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>&emsp;&emsp;通过利用现有的有线电视基础设施接入网络，因为应用了光纤和同轴电缆，所以常被称为HFC（混合光纤同轴 Hybrid Fiber Coax）系统。<br>&emsp;&emsp;一个重要特征就是共享广播媒体</p>
+<h5 id="FTTH（光纤到户）"><a href="#FTTH（光纤到户）" class="headerlink" title="FTTH（光纤到户）"></a>FTTH（光纤到户）</h5><p>&emsp;&emsp;AON（主动式光纤网络 Active optical network）<br>&emsp;&emsp;PON（被动式光纤网络 Passive optical network）</p>
+<h5 id="拨号"><a href="#拨号" class="headerlink" title="拨号"></a>拨号</h5><h5 id="卫星"><a href="#卫星" class="headerlink" title="卫星"></a>卫星</h5><h4 id="企业接入"><a href="#企业接入" class="headerlink" title="企业接入"></a>企业接入</h4><h5 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/Rocky-17/Blog_illustration/blob/master/%E8%AE%A1%E7%BD%91/%E7%AC%AC%E4%B8%80%E7%AB%A0/Ethernet.png?raw=true" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h5 id="卫星-1"><a href="#卫星-1" class="headerlink" title="卫星"></a>卫星</h5><h4 id="广域网无线接入"><a href="#广域网无线接入" class="headerlink" title="广域网无线接入"></a>广域网无线接入</h4><h5 id="3G-4G"><a href="#3G-4G" class="headerlink" title="3G/4G"></a>3G/4G</h5><h5 id="LTE"><a href="#LTE" class="headerlink" title="LTE"></a>LTE</h5><h4 id="物理媒介"><a href="#物理媒介" class="headerlink" title="物理媒介"></a>物理媒介</h4><h5 id="主机发送数据包流程"><a href="#主机发送数据包流程" class="headerlink" title="主机发送数据包流程"></a>主机发送数据包流程</h5>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-25T02:13:04.000Z" itemprop="dateUpdated">2019-07-25 10:13:04</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://rocky-17.github.io">
+            <img src="https://github.com/Rocky-17/Blog_illustration/blob/master/%E5%A4%B4%E5%83%8F/suzy.jpg?raw=true" alt="Rocky17">
+            Rocky17
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://rocky-17.github.io/2019/10/16/计算机网络/&title=《计算机网络》 — 鸽子乐园&pic=https://github.com/Rocky-17/Blog_illustration/blob/master/%E5%A4%B4%E5%83%8F/suzy.jpg?raw=true" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://rocky-17.github.io/2019/10/16/计算机网络/&title=《计算机网络》 — 鸽子乐园&source=《计算机网络（自顶向下方法）》（第七版）读书笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://rocky-17.github.io/2019/10/16/计算机网络/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络》 — 鸽子乐园&url=https://rocky-17.github.io/2019/10/16/计算机网络/&via=https://rocky-17.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://rocky-17.github.io/2019/10/16/计算机网络/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/16/Java框架/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java框架技术</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    <!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NTMxMC8yMTgyMw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Rocky17 &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://rocky-17.github.io/2019/10/16/计算机网络/&title=《计算机网络》 — 鸽子乐园&pic=https://github.com/Rocky-17/Blog_illustration/blob/master/%E5%A4%B4%E5%83%8F/suzy.jpg?raw=true" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://rocky-17.github.io/2019/10/16/计算机网络/&title=《计算机网络》 — 鸽子乐园&source=《计算机网络（自顶向下方法）》（第七版）读书笔记" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://rocky-17.github.io/2019/10/16/计算机网络/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络》 — 鸽子乐园&url=https://rocky-17.github.io/2019/10/16/计算机网络/&via=https://rocky-17.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://rocky-17.github.io/2019/10/16/计算机网络/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aS07DUAwFUPa/aZAYIVVtru0UiHMyqkqbvFMky7+Pj/j6/L5+vn72zuP7zz7z+PnHb518YWBgXJaRPCA5enLlZ6jiMTAw7sCYBNn8bkmofRayD56CgYGBUXz9OoxWAy4GBgZGj/H6cDngjwMuBgbGpRhJEZs3xSaNtrfX4hgYGBdk9AYDv/P67fMNDAyMf8+Yt/V7jz935ICBgbGbMW91VVPJSUvu9X0wMDB2M3q5VlLc5phqUy/CYGBgrGBUG2G9UWWSCE4SRwwMjN2MZDSYN8h6aeWkcMXAwLgPY5IC9pYtej9N9B/AwMBYzUhSsXnrLR9bVlNGDAyM3YzekCAvZZMOX94dLGS4GBgYKxjVxC5P16plbf7Xp11DDAyMpYy8iE0ac/lyWG8IekK7DQMD44KMfHhZLTLPatKNli0wMDBWMJJbvC/SJ6G5ui6GgYGxm3Euqbc2kYTXHI+BgbGDUZDFvN5vWU1Jo64hBgbGCka1fXZu8dlbLDs4DwYGxjpGdcUhuWm+ZpEH7oOWHwYGxm0YSWzuDTV7hy6kjBgYGKsZvUSwWmpO1sKan8fAwFjEmDTxJ5jekKCQGmJgYCxiVEcCk0WxSWF8wlQWAwPj4oxqEMxXweZlbX4GDAyMOzDygjYvR5PQ3CtiMTAwMPIw2jt6ryN48BQMDAyM4rJFXuL2RggYGBj3ZPSa9b3RZv7dwkkwMDBWM6qlY158VovVSeqJgYGxlPEFxBYzCM8cl2wAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '大爷来玩啊~';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
