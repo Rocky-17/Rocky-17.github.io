@@ -63,30 +63,6 @@
   </entry>
   
   <entry>
-    <title>Leetcode题解</title>
-    <link href="https://rocky-17.github.io/2019/10/16/Leetcode%E9%A2%98%E8%A7%A3/"/>
-    <id>https://rocky-17.github.io/2019/10/16/Leetcode题解/</id>
-    <published>2019-10-16T09:35:01.590Z</published>
-    <updated>2019-09-17T12:05:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Leetcode解题思路，尽力自己每天做一题。算法优化的内容会写得很慢，因为大佬的很多题解思路需要慢慢理解才能想明白</p><a id="more"></a><h1 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1 两数之和"></a>1 两数之和</h1><blockquote><p>&emsp;&emsp;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。<br>示例:<br>给定 nums = [2, 7, 11, 15], target = 9<br>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p></blockquote><p>&emsp;&emsp;一开始就很容易想到的思路：使用双重循环，从两边向中间搜索,代码如下：</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span>[] twoSum(<span class="built_in">int</span>[] nums, <span class="built_in">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">int</span>[] ansr = new <span class="built_in">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>;i &lt; nums.length - <span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> j = nums.length - <span class="number">1</span>; j &gt; i;j--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i] + nums[j] == target)&#123;</span><br><span class="line">                    ansr[<span class="number">0</span>] = i;</span><br><span class="line">                    ansr[<span class="number">1</span>] = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ansr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;成功AC,时间复杂度为O(n²),空间复杂度O(1);耗时74ms，内存消耗37.2MB。耗时太多，显然对这个结果不是太满意，需要换个思路。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Leetcode解题思路，尽力自己每天做一题。算法优化的内容会写得很慢，因为大佬的很多题解思路需要慢慢理解才能想明白&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Leetcode" scheme="https://rocky-17.github.io/tags/Leetcode/"/>
-    
-      <category term="刷题" scheme="https://rocky-17.github.io/tags/%E5%88%B7%E9%A2%98/"/>
-    
-      <category term="算法" scheme="https://rocky-17.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Java基础复习</title>
     <link href="https://rocky-17.github.io/2019/10/16/Java%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0/"/>
     <id>https://rocky-17.github.io/2019/10/16/Java基础复习/</id>
